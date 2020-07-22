@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = ActivityMainBinding.inflate(layoutInflater)
+        mBinding = ActivityMainBinding.inflate(layoutInflater) //LayoutInflater это класс, который умеет из содержимого layout-файла создать View-элемент. Метод который это делает называется inflate
         setContentView(mBinding.root)
     }
 
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(mToolbar) //не ебу что это за метод
+        setSupportActionBar(mToolbar) //как я понял этот метод дает нам возможность натянуть на тулбар любую иконку и анимацию
         createHeader()//создаем хедер собсна (картинка в меню)
         createDrawer()
     }
@@ -53,10 +53,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createHeader() {
-        mHeader = AccountHeaderBuilder()
+        mHeader = AccountHeaderBuilder() //получается в сторонней библиотеке есть конструктор который сам все красиво нарисует и расположит по местам
             .withActivity(this)
             .withHeaderBackground(R.drawable.header)//цвет для картинки в меню
-            .addProfiles( //не ебу что это
+            .addProfiles( //это часть конструктора
                 ProfileDrawerItem().withName("Vitaly").withEmail("mymail@gmail.com")
             ).build()
     }
