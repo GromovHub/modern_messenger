@@ -7,6 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.graphics.toColor
 import com.gmail.gromovitaly.telegram_clone.databinding.ActivityMainBinding
+import com.gmail.gromovitaly.telegram_clone.ui.ChatsFragment
+import com.gmail.gromovitaly.telegram_clone.ui.SettingsFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -38,6 +40,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFunc() {
         setSupportActionBar(mToolbar) //как я понял этот метод дает нам возможность натянуть на тулбар любую иконку и анимацию
+        supportFragmentManager.beginTransaction() //это мы вставляем фрагмент с чатами в constraint на главной
+            .replace(R.id.dataContainer, ChatsFragment()).commit()
         createHeader()//создаем хедер собсна (картинка в меню)
         createDrawer()
     }
@@ -51,43 +55,43 @@ class MainActivity : AppCompatActivity() {
             .withAccountHeader(mHeader)
             .addDrawerItems( //samo menu
                 PrimaryDrawerItem()
-                    .withIdentifier(100)//vrode nomer elementa v menu
+                    .withIdentifier(101)//vrode nomer elementa v menu
                     .withIconTintingEnabled(true)
                     .withName("New Group")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_menu_create_groups),
                 PrimaryDrawerItem()
-                    .withIdentifier(101)//vrode nomer elementa v menu
+                    .withIdentifier(102)//vrode nomer elementa v menu
                     .withIconTintingEnabled(true)
                     .withName("New Secret Chat")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_menu_secret_chat),
                 PrimaryDrawerItem()
-                    .withIdentifier(102)//vrode nomer elementa v menu
+                    .withIdentifier(103)//vrode nomer elementa v menu
                     .withIconTintingEnabled(true)
                     .withName("New Channel")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_menu_create_channel),
                 PrimaryDrawerItem()
-                    .withIdentifier(103)//vrode nomer elementa v menu
+                    .withIdentifier(104)//vrode nomer elementa v menu
                     .withIconTintingEnabled(true)
                     .withName("Contacts")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_menu_contacts),
                 PrimaryDrawerItem()
-                    .withIdentifier(104)//vrode nomer elementa v menu
+                    .withIdentifier(105)//vrode nomer elementa v menu
                     .withIconTintingEnabled(true)
                     .withName("Calls")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_menu_phone),
                 PrimaryDrawerItem()
-                    .withIdentifier(105)//vrode nomer elementa v menu
+                    .withIdentifier(106)//vrode nomer elementa v menu
                     .withIconTintingEnabled(true)
                     .withName("Saved Messages")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_menu_favorites),
                 PrimaryDrawerItem()
-                    .withIdentifier(106)//vrode nomer elementa v menu
+                    .withIdentifier(107)//vrode nomer elementa v menu
                     .withIconTintingEnabled(true)
                     .withName("Settings")
                     .withSelectable(false)
@@ -96,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                 DividerDrawerItem(), //delitel
 
                 PrimaryDrawerItem()
-                    .withIdentifier(107)//vrode nomer elementa v menu
+                    .withIdentifier(108)//vrode nomer elementa v menu
                     .withIconTintingEnabled(true)
                     .withName("Invite Friends")
                     .withSelectable(false)
@@ -107,24 +111,31 @@ class MainActivity : AppCompatActivity() {
                     .withName("Telegram FAQ")
                     .withSelectable(false)
                     .withIcon(R.drawable.ic_menu_help)
+            ).withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
+                override fun onItemClick( //слушатель нажатий на каждый пункт меню
+                    view: View?,
+                    position: Int,
+                    drawerItem: IDrawerItem<*>
+                ): Boolean {
+                    Toast.makeText(
+                        applicationContext,
+                        "${position}",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
-                    .withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
-                        override fun onItemClick( //слушатель нажатий на каждый пункт меню
-                            view: View?,
-                            position: Int,
-                            drawerItem: IDrawerItem<*>
-                        ): Boolean {
-                            Toast.makeText(
-                                applicationContext,
-                                position.toString(),
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            return false
-                        }
+                    when (position) {
+                        7 -> supportFragmentManager.beginTransaction() //Внимательно! position!=identifier
+                            .addToBackStack(null)
+                            .replace(R.id.dataContainer, SettingsFragment()).commit()
 
-                    })
-            ).build()
+                    }
+
+                    return false
+                }
+            }).build()
     }
+
+
 
     private fun createHeader() {
         mHeader =
