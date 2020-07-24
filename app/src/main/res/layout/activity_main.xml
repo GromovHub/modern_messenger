@@ -7,14 +7,18 @@
     tools:context=".MainActivity">
 
    <androidx.appcompat.widget.Toolbar
-      android:id="@+id/mainToolbar"
+       android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.ActionBar"
+       android:id="@+id/mainToolbar"
        android:layout_width="match_parent"
        android:layout_height="?attr/actionBarSize"
-      android:background="@color/colorPrimary"
-      android:elevation="4dp"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"/>
+       android:background="@color/colorPrimary"
+       android:elevation="4dp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:titleTextColor="@color/colorAccent"
+       app:subtitleTextColor="@color/colorAccent"/>
+   <!-- оказалось цвет титула можно установить прямо тут но можно и нативно в мэйне -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

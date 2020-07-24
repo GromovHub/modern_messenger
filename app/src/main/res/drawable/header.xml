@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?> //получается это мы сделали отдельный ресурс для цвета заливки хедера
+<?xml version="1.0" encoding="utf-8"?> <!--получается это мы сделали отдельный ресурс для цвета заливки хедера-->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 <solid android:color="@color/colorPrimary"/> //solid дословно "сплошной цвет"
 </shape>
