@@ -1,24 +1,14 @@
-package com.gmail.gromovitaly.telegram_clone.ui
+package com.gmail.gromovitaly.telegram_clone.ui.fragments
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.gmail.gromovitaly.telegram_clone.R
 import com.gmail.gromovitaly.telegram_clone.databinding.FragmentChatsBinding
 
-class ChatsFragment : Fragment() {
-
+class ChatsFragment : BaseFragment(R.layout.fragment_chats) {
+//фрагмент наследуется от базового
     private lateinit var mBinding: FragmentChatsBinding
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        mBinding = FragmentChatsBinding.inflate(layoutInflater)
-        return mBinding.root
+    override fun onResume() {
+        super.onResume()
     }
-
 }
