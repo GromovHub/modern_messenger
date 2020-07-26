@@ -1,22 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.SettingsFragment">
 
-
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_header_block"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/settings_header_height"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/settings_user_photo"
+            android:layout_width="@dimen/settings_user_photo_width"
+            android:layout_height="@dimen/settings_user_photo_height"
+            android:src="@drawable/ic_menu_contacts"
+            app:civ_border_width="2dp"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/margin_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:civ_border_color="#FFC107" />
+
+        <TextView
+            android:id="@+id/settings_user_id"
+            android:textStyle="bold"
+            android:text="@string/settings_default_username"
+            android:textSize="@dimen/text_normal"
+            android:textColor="@color/colorAccent"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/margin_vertical"
+            app:layout_constraintStart_toEndOf="@id/settings_user_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/settings_user_photo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/settings_user_online"
+            android:text="@string/settings_default_status"
+            android:textSize="@dimen/text_small"
+            android:textColor="@color/colorSubAccent"
+            android:layout_marginStart="@dimen/margin_horizontal"
+            android:layout_marginTop="0dp"
+            app:layout_constraintStart_toEndOf="@id/settings_user_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/settings_user_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView"
-        android:textColor="@color/md_black_1000"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings" />
+        android:id="@+id/settings_account_text_block"
+        app:layout_constraintTop_toBottomOf="@id/settings_header_block"
+        android:layout_marginTop="@dimen/margin_vertical_large"
+        android:layout_marginStart="@dimen/margin_horizontal"
+        android:text="@string/settings_account_text_string"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

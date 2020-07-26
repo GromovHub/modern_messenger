@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="chats">Chats</string>
     <string name="settings">Settings</string>
+    <string name="settings_default_username">Gromov</string>
+    <string name="settings_default_status">online</string>
+    <string name="settings_account_text_string">Account</string>
 </resources>
