@@ -7,4 +7,10 @@
     <string name="settings_default_username">Gromov</string>
     <string name="settings_default_status">online</string>
     <string name="settings_account_text_string">Account</string>
+    <string name="phoneNumber_settings_resourse">+7 (800) 555-35-35</string>
+    <string name="text_settings_phoneDescription">Tap to change phone number</string>
+    <string name="text_username">"@"gromov</string>
+    <string name="text_settings_usernameDescription">Username</string>
+    <string name="settings_bio">Bio</string>
+    <string name="text_settings_BioDescription">Add a few words about yourself</string>
 </resources>
