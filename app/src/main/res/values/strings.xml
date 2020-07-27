@@ -13,4 +13,6 @@
     <string name="text_settings_usernameDescription">Username</string>
     <string name="settings_bio">Bio</string>
     <string name="text_settings_BioDescription">Add a few words about yourself</string>
+    <string name="tollbar_dots_edit">Edit name</string>
+    <string name="toolbar_dots_exit">Log out</string>
 </resources>

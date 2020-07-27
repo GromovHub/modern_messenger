@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="AppThemeLight" parent="MaterialDrawerTheme">
         <!-- Customize your theme here. -->
+        <item name="popupTheme">@style/actionMenu</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -24,6 +25,12 @@
     
     <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="android:style/TextAppearance"> <!-- не вывышло(( цвет титула не поменялся-->
         <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <!--ниже тема для меню по трем точкам-->
+    <style name="actionMenu" parent="MaterialDrawerTheme.Light">
+        <item name="backgroundColor">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/md_black_1000</item>
     </style>
 
     <style name="separator">

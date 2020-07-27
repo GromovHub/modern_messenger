@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--к вашему вниманию новый костыль! Менюшные кнопки надо заворачивать в меню.
+    Я допускаю что это из за возможности добавлять несколько выпадающих меню на тулбаре-->
+    <item
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_dots"
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/toolbar_dots_edit"
+                android:icon="@drawable/ic_edit"
+                android:title="@string/tollbar_dots_edit"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/toolbar_dots_exit"
+                android:icon="@drawable/ic_exit"
+                android:title="@string/toolbar_dots_exit"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>
