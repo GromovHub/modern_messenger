@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.EnterCodeFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/register_image"
+        android:id="@+id/register_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_vertical_large_16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_image"
+        android:layout_margin="@dimen/margin_horizontal_16dp"
+        android:text="@string/enter_code"
+        android:textColor="@color/md_black_1000"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:id="@+id/enter_code"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/we_sent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enter_code"
+        android:text="@string/we_sent_code"
+        android:textColor="@color/material_drawer_secondary_text"
+        android:textSize="@dimen/text_small_14sp"
+        android:gravity="center"
+        android:layout_margin="@dimen/margin_horizontal_16dp"
+        />
+
+    <EditText
+        android:id="@+id/register_input_code"
+        android:inputType="number"
+        android:maxLength="6"
+        android:hint="@string/code_hint"
+        android:textColorHint="@color/material_drawer_hint_text"
+        android:gravity="center"
+        android:maxLines="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_horizontal_16dp"
+        android:padding="@dimen/padding_5pd"
+        android:textColor="@color/md_black_1000"
+        android:textSize="@dimen/text_normal_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/we_sent"
+        android:autofillHints="" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,4 +15,7 @@
     <string name="text_settings_BioDescription">Add a few words about yourself</string>
     <string name="tollbar_dots_edit">Edit name</string>
     <string name="toolbar_dots_exit">Log out</string>
+    <string name="enter_code">Enter code</string>
+    <string name="we_sent_code">We sent code</string>
+    <string name="code_hint">- - - - - -</string>
 </resources>

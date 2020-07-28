@@ -1,8 +1,10 @@
 package com.gmail.gromovitaly.telegram_clone
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import com.gmail.gromovitaly.telegram_clone.activities.RegisterActivity
 import com.gmail.gromovitaly.telegram_clone.databinding.ActivityMainBinding
 import com.gmail.gromovitaly.telegram_clone.ui.fragments.ChatsFragment
 import com.gmail.gromovitaly.telegram_clone.ui.objects.AppDrawer
@@ -27,14 +29,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(mToolbar) //как я понял этот метод дает нам возможность натянуть на тулбар любую иконку и анимацию
+        if (false){
+            setSupportActionBar(mToolbar) //как я понял этот метод дает нам возможность натянуть на тулбар любую иконку и анимацию
+            mAppDrawer.Create()
+            supportFragmentManager.beginTransaction() //это мы вставляем фрагмент с чатами в constraint на главной
+                .replace(R.id.dataContainer,
+                    ChatsFragment()
+                ).commit()
+        } else {
+            val intent = Intent(this, RegisterActivity ::class.java)
+            startActivity(intent)
+        }
 
-        mAppDrawer.Create()
 
-        supportFragmentManager.beginTransaction() //это мы вставляем фрагмент с чатами в constraint на главной
-            .replace(R.id.dataContainer,
-                ChatsFragment()
-            ).commit()
+
 
 
     }
