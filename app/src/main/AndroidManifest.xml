@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeLight">
         <activity android:name=".activities.RegisterActivity"
-            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:windowSoftInputMode="stateVisible|adjustResize" //важная херня из за которой кнопки юая поднимаются вверх если появилась клава
+                  //внисывается соотвтственно в манифест в каждый используемый активити
             />
         <activity android:name=".MainActivity">
             <intent-filter>
