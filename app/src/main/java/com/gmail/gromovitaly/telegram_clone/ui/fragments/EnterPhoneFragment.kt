@@ -1,12 +1,10 @@
 package com.gmail.gromovitaly.telegram_clone.ui.fragments
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.gmail.gromovitaly.telegram_clone.R
+import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
+import com.gmail.gromovitaly.telegram_clone.utilites.showToast
 import kotlinx.android.synthetic.main.fragment_enter_phone.*
 
 
@@ -23,13 +21,12 @@ class EnterPhoneFragment : Fragment(R.layout.fragment_enter_phone) {
     }
 
     private fun sendCode() {
+        //если поле ввода пустое, то просьба ввести данные
+        //если нет, то фрагмент менеджер запускает фрагмент ввода кода из смс
     if (register_input_phone.text.toString().isEmpty()){
-        Toast.makeText(activity, "Enter phone", Toast.LENGTH_SHORT).show()
+        showToast("Enter phone")
     } else {
-        fragmentManager?.beginTransaction()
-            ?.replace(R.id.registerDataContainer, EnterCodeFragment())
-            ?.addToBackStack(null)
-            ?.commit()
+        replaceFragment(R.id.registerDataContainer, EnterCodeFragment())
     }
     }
 

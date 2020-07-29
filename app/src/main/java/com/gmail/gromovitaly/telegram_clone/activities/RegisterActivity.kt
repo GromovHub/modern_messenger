@@ -6,7 +6,10 @@ import androidx.appcompat.widget.Toolbar
 import com.gmail.gromovitaly.telegram_clone.R
 import com.gmail.gromovitaly.telegram_clone.databinding.ActivityRegisterBinding
 import com.gmail.gromovitaly.telegram_clone.ui.fragments.EnterPhoneFragment
+import com.gmail.gromovitaly.telegram_clone.utilites.replaceActivity
+import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
 
+//это получился второй активити для модуля регистрации
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
@@ -23,8 +26,6 @@ class RegisterActivity : AppCompatActivity() {
         toolbar = binding.registerToolbar
         setSupportActionBar(toolbar)
         title = "Your phone"
-        supportFragmentManager.beginTransaction()
-            .add(R.id.registerDataContainer, EnterPhoneFragment() )
-            .commit()
+        replaceFragment(R.id.registerDataContainer, EnterPhoneFragment())
     }
 }

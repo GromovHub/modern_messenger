@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.EnterPhoneFragment">
+<!-- ниже явно требуется сделать отдельный стиль-->
 
     <EditText
         android:id="@+id/register_input_phone"
@@ -20,8 +21,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
-
+        android:autofillHints=""
+        tools:ignore="LabelFor,TextFields" />
+    <!-- //! какого то черта кнопка не прилипает к низу а висит в конце эдит текста -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/register_btn_next"
         android:layout_width="wrap_content"

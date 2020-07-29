@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.gmail.gromovitaly.telegram_clone.R
+import com.gmail.gromovitaly.telegram_clone.utilites.AppTextWatcher
+import com.gmail.gromovitaly.telegram_clone.utilites.showToast
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 
 
@@ -16,26 +18,16 @@ class EnterCodeFragment : Fragment(R.layout.fragment_enter_code) {
 
     override fun onStart() {
         super.onStart()
-        register_input_code.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {
+        //не забывай что ниже сокращенный вотчер
+        register_input_code.addTextChangedListener(AppTextWatcher {
                 val codeValue = register_input_code.text.toString()
                 if (codeValue.length == 6) {
-                    verifyCode()
+                    verifyCode() //если условия выполнены то смотрим что делает ф-ция
                 }
-            }
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
         })
-
     }
 
     private fun verifyCode() {
-    Toast.makeText(activity, "OK", Toast.LENGTH_SHORT)
+    showToast("OK") //это сокращенный тост только для фрагментов
     }
 }

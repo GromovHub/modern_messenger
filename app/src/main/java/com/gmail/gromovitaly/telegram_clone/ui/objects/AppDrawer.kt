@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.gmail.gromovitaly.telegram_clone.R
 import com.gmail.gromovitaly.telegram_clone.ui.fragments.SettingsFragment
+import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -102,12 +103,8 @@ class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: androidx.appc
                     ).show()
 
                     when (position) {
-                        7 -> mainActivity.supportFragmentManager.beginTransaction() //Внимательно! position!=identifier
-                            .addToBackStack(null)
-                            .replace(R.id.dataContainer,
-                                SettingsFragment()
-                            ).commit()
-
+                        7 -> mainActivity.replaceFragment(R.id.dataContainer,
+                            SettingsFragment())
                     }
 
                     return false

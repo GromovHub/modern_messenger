@@ -8,17 +8,9 @@ import android.view.ViewGroup
 import com.gmail.gromovitaly.telegram_clone.R
 
 
-open class BaseFragment(val layout:Int) : Fragment() {
+open class BaseFragment(val layout:Int) : Fragment(layout) {
 //в этот класс фрагмент мы вынесли дублирующий код из остальных фрагментов
-private lateinit var mRootView: View
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-       mRootView = inflater.inflate(layout,container,false)
-        return mRootView
-    }
+// ? а потом его удалили
 
     override fun onStart() {
         super.onStart()
