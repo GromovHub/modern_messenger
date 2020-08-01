@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import com.gmail.gromovitaly.telegram_clone.R
 import com.gmail.gromovitaly.telegram_clone.databinding.ActivityRegisterBinding
 import com.gmail.gromovitaly.telegram_clone.ui.fragments.EnterPhoneFragment
+import com.gmail.gromovitaly.telegram_clone.utilites.initFirebase
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceActivity
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
 
@@ -19,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initFirebase()
     }
 
     override fun onStart() {

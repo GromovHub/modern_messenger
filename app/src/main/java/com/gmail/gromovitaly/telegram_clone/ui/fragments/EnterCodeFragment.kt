@@ -4,10 +4,7 @@ import androidx.fragment.app.Fragment
 import com.gmail.gromovitaly.telegram_clone.MainActivity
 import com.gmail.gromovitaly.telegram_clone.R
 import com.gmail.gromovitaly.telegram_clone.activities.RegisterActivity
-import com.gmail.gromovitaly.telegram_clone.utilites.AUTH
-import com.gmail.gromovitaly.telegram_clone.utilites.AppTextWatcher
-import com.gmail.gromovitaly.telegram_clone.utilites.replaceActivity
-import com.gmail.gromovitaly.telegram_clone.utilites.showToast
+import com.gmail.gromovitaly.telegram_clone.utilites.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
 import kotlinx.android.synthetic.main.fragment_enter_code.*
@@ -33,8 +30,18 @@ class EnterCodeFragment(val PhoneNumber: String, val id: String) : Fragment(R.la
        val credential = PhoneAuthProvider.getCredential(id, code)
         AUTH.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                showToast("Welcome!")
-                (activity as RegisterActivity).replaceActivity(MainActivity())
+                val uId = AUTH.currentUser?.uid.toString()
+                val dateMap = mutableMapOf <String, Any> ()
+                dateMap[CHILD_ID] = uId
+                dateMap[CHILD_PHONE] = PhoneNumber
+                dateMap[CHILD_USERNAME] = uId
+                REF_DATABASE_ROOT.child(NODE_USERS).child(uId).updateChildren(dateMap)
+                    .addOnCompleteListener { task2 ->
+                        if (task2.isSuccessful) {
+                            showToast("Welcome!")
+                            (activity as RegisterActivity).replaceActivity(MainActivity())
+                        } else showToast(task2.exception?.message.toString())
+                    }
             } else showToast(task.exception?.message.toString())
         }
     }

@@ -17,5 +17,7 @@
     <string name="toolbar_dots_exit">Log out</string>
     <string name="enter_code">Enter code</string>
     <string name="we_sent_code">We sent code</string>
-    <string name="code_hint">- - - - - -</string>
+    <string name="code_hint">-  -  -  -  -  -</string>
+    <string name="enter_your_phone_hint">Enter your phone here</string>
+    <string name="enter_code_logo">enter code logo</string>
 </resources>

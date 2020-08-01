@@ -9,6 +9,7 @@ import com.gmail.gromovitaly.telegram_clone.databinding.ActivityMainBinding
 import com.gmail.gromovitaly.telegram_clone.ui.fragments.ChatsFragment
 import com.gmail.gromovitaly.telegram_clone.ui.objects.AppDrawer
 import com.gmail.gromovitaly.telegram_clone.utilites.AUTH
+import com.gmail.gromovitaly.telegram_clone.utilites.initFirebase
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceActivity
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -48,6 +49,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar) //подключили класс апдравер в который вынесли код
-        AUTH = FirebaseAuth.getInstance()
+        initFirebase()
     }
 }
