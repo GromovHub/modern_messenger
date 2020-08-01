@@ -84,7 +84,7 @@
         <item name="android:gravity">center</item>
         <item name="android:inputType">phone</item>
         <item name="android:maxLines">1</item>
-        <item name="android:padding">@dimen/padding_5pd</item>
+        <item name="android:padding">@dimen/padding_15pd</item>
         <item name="android:textColor">@color/md_black_1000</item>
         <item name="android:textColorHint">@color/material_drawer_hint_text</item>
         <item name="android:textSize">@dimen/text_normal_16sp</item>

@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
-        android:padding="@dimen/padding_5pd"
+        android:padding="@dimen/padding_15pd"
         android:textColor="@color/md_black_1000"
         android:textSize="@dimen/text_normal_16sp"
         app:layout_constraintEnd_toEndOf="parent"

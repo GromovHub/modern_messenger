@@ -15,7 +15,9 @@
     <!--Other-->
     <dimen name="WHAT_WHERE_DESCRIPTION_SIZE">1dp</dimen>
     <dimen name="ripple_click_radius">4dp</dimen>
-    <dimen name="padding_5pd">10dp</dimen>
+    <dimen name="padding_15pd">15dp</dimen>
+    <dimen name="padding_10pd">10dp</dimen>
+    <dimen name="padding_5pd">5dp</dimen>
 
 
 </resources>
