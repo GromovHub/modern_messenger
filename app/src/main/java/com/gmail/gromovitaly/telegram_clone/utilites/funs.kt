@@ -3,9 +3,7 @@ package com.gmail.gromovitaly.telegram_clone.utilites
 import android.content.Intent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import com.gmail.gromovitaly.telegram_clone.ui.fragments.EnterCodeFragment
 
 //этот пакет для переделанных функций
 

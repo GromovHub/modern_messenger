@@ -1,13 +1,12 @@
 package com.gmail.gromovitaly.telegram_clone.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.gmail.gromovitaly.telegram_clone.R
 import com.gmail.gromovitaly.telegram_clone.databinding.ActivityRegisterBinding
 import com.gmail.gromovitaly.telegram_clone.ui.fragments.EnterPhoneFragment
 import com.gmail.gromovitaly.telegram_clone.utilites.initFirebase
-import com.gmail.gromovitaly.telegram_clone.utilites.replaceActivity
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
 
 //это получился второй активити для модуля регистрации

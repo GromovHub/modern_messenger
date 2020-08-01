@@ -5,7 +5,6 @@ import com.gmail.gromovitaly.telegram_clone.MainActivity
 import com.gmail.gromovitaly.telegram_clone.R
 import com.gmail.gromovitaly.telegram_clone.activities.RegisterActivity
 import com.gmail.gromovitaly.telegram_clone.utilites.*
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
 import kotlinx.android.synthetic.main.fragment_enter_code.*
 

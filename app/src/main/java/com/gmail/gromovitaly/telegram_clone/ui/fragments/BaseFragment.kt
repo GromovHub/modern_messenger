@@ -1,11 +1,7 @@
 package com.gmail.gromovitaly.telegram_clone.ui.fragments
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.gmail.gromovitaly.telegram_clone.R
+import com.gmail.gromovitaly.telegram_clone.MainActivity
 
 
 open class BaseFragment(val layout:Int) : Fragment(layout) {
@@ -14,5 +10,12 @@ open class BaseFragment(val layout:Int) : Fragment(layout) {
 
     override fun onStart() {
         super.onStart()
+        (activity as MainActivity).mAppDrawer.disableDrawer() //когда запускается фрагмент отличный от фрагмента с чатами, дравер блокируется
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as MainActivity).mAppDrawer.enableDrawer()
+        // как только переходим в наследников НЕ базового фрагмента, старые фрагменты стопятся
     }
 }

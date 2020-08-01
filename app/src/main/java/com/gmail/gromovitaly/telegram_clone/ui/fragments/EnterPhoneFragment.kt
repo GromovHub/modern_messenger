@@ -9,10 +9,8 @@ import com.gmail.gromovitaly.telegram_clone.utilites.replaceActivity
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
 import com.gmail.gromovitaly.telegram_clone.utilites.showToast
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_enter_phone.*
 import java.util.concurrent.TimeUnit
 
