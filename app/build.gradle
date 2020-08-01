@@ -32,6 +32,9 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+
     implementation 'de.hdodenhof:circleimageview:3.1.0' //это груглая фотка
 
     implementation "com.mikepenz:materialdrawer:7.0.0" //это меню дравер

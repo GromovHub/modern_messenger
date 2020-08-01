@@ -3,9 +3,9 @@ package com.gmail.gromovitaly.telegram_clone.utilites
 import android.content.Intent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import com.gmail.gromovitaly.telegram_clone.R
-import com.gmail.gromovitaly.telegram_clone.ui.fragments.ChatsFragment
+import com.gmail.gromovitaly.telegram_clone.ui.fragments.EnterCodeFragment
 
 //этот пакет для переделанных функций
 
@@ -21,15 +21,25 @@ fun AppCompatActivity.replaceActivity(activity: AppCompatActivity){
     this.finish() //выгрузка старого активити из памяти
 }
 
-fun AppCompatActivity.replaceFragment(containerViewIdKUDA: Int, fragmentCHTO: Fragment) {
+fun AppCompatActivity.replaceFragment(containerViewIdKUDA: Int, fragmentCHTO: Fragment, addStack: Boolean = true) {
     //*** сокращение вызова фрагмента для из активити
-    supportFragmentManager
-        .beginTransaction()
-        .addToBackStack(null)
-        .replace(
-            containerViewIdKUDA,
-            fragmentCHTO
-        ).commit()
+    if (addStack){
+        supportFragmentManager
+            .beginTransaction()
+            .addToBackStack(null)
+            .replace(
+                containerViewIdKUDA,
+                fragmentCHTO
+            ).commit()
+    } else {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(
+                containerViewIdKUDA,
+                fragmentCHTO
+            ).commit()
+    }
+
 
 }fun Fragment.replaceFragment(containerViewIdKUDA: Int, fragmentCHTO: Fragment) {
     //*** сокращение вызова фрагмента для вызова из фрагмента

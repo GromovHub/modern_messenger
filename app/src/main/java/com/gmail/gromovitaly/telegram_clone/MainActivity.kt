@@ -8,14 +8,17 @@ import com.gmail.gromovitaly.telegram_clone.activities.RegisterActivity
 import com.gmail.gromovitaly.telegram_clone.databinding.ActivityMainBinding
 import com.gmail.gromovitaly.telegram_clone.ui.fragments.ChatsFragment
 import com.gmail.gromovitaly.telegram_clone.ui.objects.AppDrawer
+import com.gmail.gromovitaly.telegram_clone.utilites.AUTH
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceActivity
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     // по моим скромным выводам мы добавляем части будущего интерфейса ниже
     private lateinit var mBinding: ActivityMainBinding //это для нул безопасного обращения к элементам вью //аналог синтетики, файндвью или датабиндинга
     private lateinit var mToolbar: Toolbar // это верхняя полоса на экране
     private lateinit var mAppDrawer: AppDrawer
+     // создание объекта базы данных
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +34,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        if (true){ //?тут я чет не в теме почему фолс //это временный момент. этот буль разрешает вход дальше
+        if (AUTH.currentUser != null){ //проверка пользователя через базу
             setSupportActionBar(mToolbar) //как я понял этот метод дает нам возможность натянуть на тулбар любую иконку и анимацию
             mAppDrawer.Create()
-            replaceFragment(R.id.dataContainer, ChatsFragment()) //это мы вставляем фрагмент с чатами в constraint на главной
+            replaceFragment(R.id.dataContainer, ChatsFragment(), false) //это мы вставляем фрагмент с чатами в constraint на главной //без добавления в стэк
         } else {
             replaceActivity(RegisterActivity()) //в случае не соблюдения условий открыветсся окно регистрации
         }
@@ -45,5 +48,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
         mAppDrawer = AppDrawer(this, mToolbar) //подключили класс апдравер в который вынесли код
+        AUTH = FirebaseAuth.getInstance()
     }
 }

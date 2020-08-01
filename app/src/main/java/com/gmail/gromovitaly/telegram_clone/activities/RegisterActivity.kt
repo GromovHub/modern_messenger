@@ -26,6 +26,6 @@ class RegisterActivity : AppCompatActivity() {
         toolbar = binding.registerToolbar
         setSupportActionBar(toolbar)
         title = "Your phone"
-        replaceFragment(R.id.registerDataContainer, EnterPhoneFragment())
+        replaceFragment(R.id.registerDataContainer, EnterPhoneFragment(), false) //без добавления в стэк
     }
 }
