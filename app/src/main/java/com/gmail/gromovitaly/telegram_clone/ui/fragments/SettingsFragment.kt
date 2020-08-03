@@ -9,6 +9,7 @@ import com.gmail.gromovitaly.telegram_clone.activities.RegisterActivity
 import com.gmail.gromovitaly.telegram_clone.databinding.FragmentSettingsBinding
 import com.gmail.gromovitaly.telegram_clone.utilites.AUTH
 import com.gmail.gromovitaly.telegram_clone.utilites.replaceActivity
+import com.gmail.gromovitaly.telegram_clone.utilites.replaceFragment
 
 
 class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
@@ -30,6 +31,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         when(item.itemId){
             R.id.toolbar_dots_exit -> {AUTH.signOut()
             (activity as MainActivity).replaceActivity(RegisterActivity())}
+            R.id.toolbar_dots_edit -> replaceFragment(R.id.dataContainer, ChangeNameFragment())
         }
         return true
     }

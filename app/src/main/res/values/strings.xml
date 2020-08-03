@@ -20,4 +20,8 @@
     <string name="code_hint">-  -  -  -  -  -</string>
     <string name="enter_your_phone_hint">Enter your phone here</string>
     <string name="enter_code_logo">enter code logo</string>
+    <string name="settings_hint_Input_name">Name</string>
+    <string name="settings_input_last_name">Last name</string>
+    <string name="name_not_be_empty">Name not be empty</string>
+    <string name="data_update">Data is Up To Date</string>
 </resources>
